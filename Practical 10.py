@@ -21,6 +21,6 @@ def bisection(f, lower_limit, upper_limit, tol, max_iter):
             lower_limit, f_left = middle_value, fm
     return (lower_limit + upper_limit)/2, max_iter, tol
 
-a,b,tol,max_iter = 0, 100, 1e-3, 100
+a,b,tol,max_iter = 0, 100, 1e-9, 100
 answer, iteration_number, tolerence = bisection(f, a, b, tol, max_iter)
-print("Answer= ", answer, "Number of Iterations taken= ", iteration_number, "at tolerence= ", tolerence)
+print("Answer = ", answer, "Number of Iterations taken = ", iteration_number, "at tolerence = ", tolerence)

@@ -3,9 +3,9 @@ mass_electron = 9.11e-31           # electron mass (kg)
 h_reduced = 1.054e-34       # reduced Planck constant (J·s)
 eV = 1.6e-19 
 
-well_depth_ev = 10.0
+well_depth_ev = 22.0
 well_depth_joules = well_depth_ev * eV  
-well_width = 0.2e-9
+well_width = 1.0e-9
 
 z0 = well_width * math.sqrt(2 * mass_electron * well_depth_joules) / h_reduced
 print("z0 = ", z0)

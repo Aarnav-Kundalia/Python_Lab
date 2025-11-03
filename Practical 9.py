@@ -27,18 +27,43 @@ print("Matrix A:")
 for row in A_matrix:
     print(row)'''
 
+'''
+rows = int(input("Enter number of rows for Matrix : "))
+columns = int(input("Enter number of columns for Matrix : "))
+matrix = []
+for i in range(rows):
+    for j in range(columns):
+        element = (input(f"Enter the element at position ({i+1}, {j+1}): "))
+        try:
+            element = int(element)
+        except ValueError:
+            try:
+                element = float(element)
+            except ValueError:
+                element = complex(element.replace(' ', ''))
+        matrix.append(element)
+print("Matrix:")
+for i in range(rows):
+    row = matrix[i*columns:(i+1)*columns]
+    print(row)
 
-'''rows_B = int(input("Enter number of rows for Matrix B: "))
-columns_B = int(input("Enter number of columns for Matrix B: "))
-B_matrix = []
-for i in range(rows_B):
-    for j in range(columns_B):
-        element = int(input(f"Enter the element at position ({i+1}, {j+1}): "))
-        B_matrix.append(element)
-print("Matrix B:")
-for i in range(rows_B):
-    row = B_matrix[i*columns_B:(i+1)*columns_B]
+
+
+
+def matrix_addition(A, B):
+    if len(A) != len(B) or len(A[0]) != len(B[0]):
+        raise ValueError("Matrices must have the same dimensions for addition.")
+    result = []
+    for i in range(len(A)):
+        row = []
+        for j in range(len(A[0])):
+            row.append(A[i][j] + B[i][j])
+        result.append(row)
+    return result
+
+A_matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+B_matrix = [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
+result = matrix_addition(A_matrix, B_matrix)
+print("Resultant Matrix after Addition:")
+for row in result:
     print(row)'''
-
-'''
-'''

@@ -1,3 +1,4 @@
+
 a = input("Enter base number")
 b = input("Enter power number: ")
 def convert(a, b):    
@@ -19,3 +20,11 @@ while b > 0:
     b -= 1
 
 print(f"The power of the number is {a}")
+'''
+def variable(a, b):
+    if b == 0:
+        return 1
+    return a * variable(a, b-1)
+
+a, b = 2, 5
+print(a, "raised to", b, "is", variable(a,b))'''
